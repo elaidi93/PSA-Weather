@@ -20,6 +20,7 @@
 		394C8FE328FD9D63004FB23A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394C8FE228FD9D63004FB23A /* Constants.swift */; };
 		394C8FE628FDA9A7004FB23A /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394C8FE528FDA9A7004FB23A /* WeatherResponse.swift */; };
 		394C8FE828FDCB84004FB23A /* Coordinat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394C8FE728FDCB84004FB23A /* Coordinat.swift */; };
+		394C8FEB28FDCF76004FB23A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394C8FEA28FDCF76004FB23A /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		394C8FE228FD9D63004FB23A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		394C8FE528FDA9A7004FB23A /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		394C8FE728FDCB84004FB23A /* Coordinat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinat.swift; sourceTree = "<group>"; };
+		394C8FEA28FDCF76004FB23A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				394C8F9628FD8CF4004FB23A /* App */,
 				394C8F9D28FD92EC004FB23A /* Data */,
 				394C8F9C28FD92D6004FB23A /* Ressources */,
+				394C8FE928FDCF27004FB23A /* Utils */,
 			);
 			path = "EPS-Weather";
 			sourceTree = "<group>";
@@ -209,6 +212,14 @@
 				394C8FE528FDA9A7004FB23A /* WeatherResponse.swift */,
 			);
 			path = Responces;
+			sourceTree = "<group>";
+		};
+		394C8FE928FDCF27004FB23A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				394C8FEA28FDCF76004FB23A /* Images.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +358,7 @@
 				394C8F6428F9A2E5004FB23A /* CitiesViewController.swift in Sources */,
 				394C8F6028F9A2E5004FB23A /* AppDelegate.swift in Sources */,
 				394C8F6A28F9A2E5004FB23A /* EPS_Weather.xcdatamodeld in Sources */,
+				394C8FEB28FDCF76004FB23A /* Images.swift in Sources */,
 				394C8FE128FD9D40004FB23A /* WeatherViewModel.swift in Sources */,
 				394C8FE828FDCB84004FB23A /* Coordinat.swift in Sources */,
 			);

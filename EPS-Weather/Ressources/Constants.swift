@@ -9,6 +9,6 @@ import Foundation
 
 class Constants {
 	
-	static let api_url = "https://api.openweathermap.org/data/2.5/weatherr"
+	static let api_url = "https://api.openweathermap.org/data/2.5/weather"
 	static let api_key = "7239c0ea76e0c591a26c6d4ca8d47aea"
 }
