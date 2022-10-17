@@ -11,9 +11,18 @@ class CitiesViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		let viewModel = WeatherViewModel()
+		DispatchQueue.main.async {
+			
+			viewModel.getWeather(params: Coordinate(lat: 48.11220330007356, lon: -1.6822433953343767)) { result in
+				switch result {
+				case .success(let weather):
+					print(weather)
+				case .failure(let error):
+					print(error)
+				}
+			}
+		}
 	}
-
-
 }
 
