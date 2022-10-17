@@ -495,7 +495,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y57Y4G6D3V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "EPS-Weather/Info.plist";
+				INFOPLIST_FILE = "EPS-Weather/Ressources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Cities.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Cities;
@@ -524,7 +524,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y57Y4G6D3V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "EPS-Weather/Info.plist";
+				INFOPLIST_FILE = "EPS-Weather/Ressources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Cities.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Cities;
