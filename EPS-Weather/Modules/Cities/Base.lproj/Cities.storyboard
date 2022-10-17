@@ -17,21 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUT-QW-ySp">
-                                <rect key="frame" x="174" y="411.66666666666669" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.59215686270000001" green="0.76078431369999999" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JzW-j3-GtM">
+                                <rect key="frame" x="145" y="372" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3Os-Nb-R7l"/>
+                                    <constraint firstAttribute="width" constant="100" id="bRL-o3-3om"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xUT-QW-ySp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PHY-ah-mdo"/>
-                            <constraint firstItem="xUT-QW-ySp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XH7-5r-juY"/>
+                            <constraint firstItem="JzW-j3-GtM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="P1b-hd-fXM"/>
+                            <constraint firstItem="JzW-j3-GtM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ysm-5h-dyk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="img" destination="JzW-j3-GtM" id="AxC-ck-oCn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
