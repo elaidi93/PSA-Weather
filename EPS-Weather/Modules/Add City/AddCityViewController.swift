@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 
 protocol AddCityViewControllerDelegate {
-	func didShooseCity()
+	func didAdd(weather: WeatherResponse)
 }
 
 class AddCityViewController: UIViewController {
@@ -24,6 +24,9 @@ class AddCityViewController: UIViewController {
 	
 	var searchCompleter = MKLocalSearchCompleter()
 	var searchResults = [MKLocalSearchCompletion]()
+	
+	let viewModel = WeatherViewModel()
+	var delegate: AddCityViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,26 +55,20 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
-		let result = searchResults[indexPath.row]
-		let searchRequest = MKLocalSearch.Request(completion: result)
-		
-		let search = MKLocalSearch(request: searchRequest)
-		search.start { (response, error) in
-			guard let coordinate = response?.mapItems[0].placemark.coordinate else {
-				return
+		let searchRequest = MKLocalSearch.Request(completion: searchResults[indexPath.row])
+		MKLocalSearch(request: searchRequest).start { (response, error) in
+			guard let coordinate = response?.mapItems[0].placemark.coordinate
+			else { return }
+			
+			self.viewModel.getWeather(params: coordinate) { result in
+				switch result {
+				case .success(let weather):
+					self.delegate?.didAdd(weather: weather)
+					self.dismiss(animated: true)
+				case .failure(let error):
+					print(error)
+				}
 			}
-			
-			guard let name = response?.mapItems[0].name else {
-				return
-			}
-			
-			let lat = coordinate.latitude
-			let lon = coordinate.longitude
-			
-			print(lat)
-			print(lon)
-			print(name)
-			
 		}
 	}
 }
@@ -85,5 +82,4 @@ extension AddCityViewController: MKLocalSearchCompleterDelegate, UISearchBarDele
 		searchResults = completer.results
 		tableView.reloadData()
 	}
-	
 }

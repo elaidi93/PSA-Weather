@@ -42,6 +42,12 @@ class CitiesViewController: UIViewController {
 			}
 		}
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let destination = segue.destination as? AddCityViewController {
+			destination.delegate = self
+		}
+	}
 }
 
 // MARK: - TableView Protocols
@@ -62,3 +68,9 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 }
 
+extension CitiesViewController: AddCityViewControllerDelegate {
+	func didAdd(weather: WeatherResponse) {
+		self.weathers.append(weather)
+		self.tableview.reloadData()
+	}
+}
