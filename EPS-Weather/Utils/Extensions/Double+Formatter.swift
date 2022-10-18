@@ -31,7 +31,7 @@ extension Double {
 		
 		return percentFormatter.string(from: NSNumber(value: self))
 	}
-
+	
 	// MARK: - Measurement Formatter
 	private var measurementFormatter: MeasurementFormatter {
 		let formatter = MeasurementFormatter()

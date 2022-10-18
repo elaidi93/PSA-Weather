@@ -15,13 +15,13 @@ struct WeatherResponse: Decodable {
 	let wind: Wind
 }
 
-struct Weather: Decodable {
+struct Weather: Codable {
 	let description: String
 	let icon: String
 	let main: String
 }
 
-struct Main: Decodable {
+struct Main: Codable {
 	let temp: Double
 	let pressure: Double
 	let humidity: Double
@@ -31,7 +31,7 @@ struct Wind: Codable {
 	let speed: Double
 }
 
-struct WeatherCoordinate: Decodable {
+struct WeatherCoordinate: Codable {
 	let longitude: Double
 	let latitude: Double
 	
