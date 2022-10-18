@@ -9,6 +9,10 @@ import Foundation
 
 class Constants {
 	
+	// MARK: - API
 	static let api_url = "https://api.openweathermap.org/data/2.5/weather"
 	static let api_key = "7239c0ea76e0c591a26c6d4ca8d47aea"
+	
+	// MARK: - Cities
+	static let cities_title = "Villes"
 }

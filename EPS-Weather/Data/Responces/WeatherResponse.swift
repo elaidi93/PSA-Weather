@@ -9,18 +9,18 @@ import Foundation
 
 struct WeatherResponse: Decodable {
 	let name: String
-	let weather: [WeatherAPI]
-	let main: MainAPI
+	let weather: [Weather]
+	let main: Main
 	let coord: WeatherCoordinate
 }
 
-struct WeatherAPI : Decodable {
-	let description : String
+struct Weather: Decodable {
+	let description: String
 	let icon: String
 	let main: String
 }
 
-struct MainAPI : Decodable {
+struct Main: Decodable {
 	let temp: Double
 	let pressure: Double
 	let humidity: Double
