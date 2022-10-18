@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class CitiesViewController: UIViewController {
 	
@@ -31,8 +32,7 @@ class CitiesViewController: UIViewController {
 	private func fetchWeathers() {
 		let viewModel = WeatherViewModel()
 		DispatchQueue.main.async {
-			
-			viewModel.getWeather(params: Coordinate(lat: 48.11220330007356, lon: -1.6822433953343767)) { result in
+			viewModel.getWeather(params: CLLocationCoordinate2DMake(48.11220330007356, -1.6822433953343767)) { result in
 				switch result {
 				case .success(let weather):
 					self.weathers.append(weather)

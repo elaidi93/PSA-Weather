@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import CoreLocation
 
 class WeatherViewModel {
 	
-	func getWeather(params: Coordinate, completionHandler: @escaping (Result<WeatherResponse, Error>) -> ()) {
+	func getWeather(params: CLLocationCoordinate2D, completionHandler: @escaping (Result<WeatherResponse, Error>) -> ()) {
 		
-		guard let url = URL(string: "\(Constants.api_url)?lat=\(params.lat)&lon=\(params.lon)&appid=\(Constants.api_key)&units=metric")
+		guard let url = URL(string: "\(Constants.api_url)?lat=\(params.latitude)&lon=\(params.longitude)&appid=\(Constants.api_key)&units=metric")
 		else { return }
 		
 		let task = URLSession.shared.dataTask(with: url) { data, _, error in
