@@ -22,7 +22,7 @@ class CityTableViewCell: UITableViewCell, ReuseIdentifierProtocol {
 
 	func configure(with weather: WeatherResponse) {
 		cityName.text = weather.name
-		weatherDegree.text = String(weather.main.temp)
+		weatherDegree.text = weather.main.temp.formattedTemperature
 		weatherIcon.image = Images(rawValue: weather.weather.first!.icon)?.image
 	}
 

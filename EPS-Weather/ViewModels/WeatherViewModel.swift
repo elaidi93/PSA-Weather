@@ -26,7 +26,7 @@ class WeatherViewModel {
 					DispatchQueue.main.async {
 						completionHandler(.success(weather))
 					}
-				} catch {
+				} catch(let error) {
 					completionHandler(.failure(error))
 				}
 			}
