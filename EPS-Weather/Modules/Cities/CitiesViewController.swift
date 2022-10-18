@@ -10,22 +10,56 @@ import UIKit
 class CitiesViewController: UIViewController {
 	
 	@IBOutlet private weak var img: UIImageView!
+	@IBOutlet private weak var tableview: UITableView! {
+		didSet {
+			tableview.dataSource = self
+			tableview.delegate = self
+			tableview.register(UINib(nibName: CityTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CityTableViewCell.reuseIdentifier)
+			tableview.contentInset.top = 20
+		}
+	}
+	
+	private var weathers: [WeatherResponse] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.title = Constants.cities_title
+		self.navigationController?.navigationBar.prefersLargeTitles = true
+		fetchWeathers()
+	}
+	
+	private func fetchWeathers() {
 		let viewModel = WeatherViewModel()
 		DispatchQueue.main.async {
 			
 			viewModel.getWeather(params: Coordinate(lat: 48.11220330007356, lon: -1.6822433953343767)) { result in
 				switch result {
 				case .success(let weather):
-					self.img.image = Images(rawValue: weather.weather.first!.icon)?.image
-					print(weather)
+					self.weathers.append(weather)
+					self.tableview.reloadData()
 				case .failure(let error):
 					print(error)
 				}
 			}
 		}
+	}
+}
+
+// MARK: - TableView Protocols
+extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return weathers.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: CityTableViewCell.reuseIdentifier, for: indexPath) as? CityTableViewCell
+		else { return UITableViewCell() }
+		cell.configure(with: self.weathers[indexPath.row])
+		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 }
 
