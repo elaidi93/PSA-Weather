@@ -25,6 +25,8 @@
 		394C8FF528FEAC2E004FB23A /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394C8FF428FEAC2E004FB23A /* CityTableViewCell.xib */; };
 		394C8FF828FEE66F004FB23A /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394C8FF728FEE66F004FB23A /* UIView+Shadow.swift */; };
 		394C8FFA28FEEE45004FB23A /* Double+TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394C8FF928FEEE45004FB23A /* Double+TemperatureFormatter.swift */; };
+		394C8FFD28FEF169004FB23A /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394C8FFC28FEF169004FB23A /* AddCityViewController.swift */; };
+		394C8FFF28FEF17B004FB23A /* AddCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394C8FFE28FEF17B004FB23A /* AddCity.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		394C8FF428FEAC2E004FB23A /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		394C8FF728FEE66F004FB23A /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		394C8FF928FEEE45004FB23A /* Double+TemperatureFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+TemperatureFormatter.swift"; sourceTree = "<group>"; };
+		394C8FFC28FEF169004FB23A /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
+		394C8FFE28FEF17B004FB23A /* AddCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCity.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		394C8F9528FD8934004FB23A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				394C8FFB28FEF149004FB23A /* Add City */,
 				394C8F9B28FD92AE004FB23A /* LaunchScreen */,
 				394C8F9A28FD8EF9004FB23A /* Cities */,
 			);
@@ -258,6 +263,15 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		394C8FFB28FEF149004FB23A /* Add City */ = {
+			isa = PBXGroup;
+			children = (
+				394C8FFC28FEF169004FB23A /* AddCityViewController.swift */,
+				394C8FFE28FEF17B004FB23A /* AddCity.storyboard */,
+			);
+			path = "Add City";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,6 +378,7 @@
 			files = (
 				394C8F6F28F9A2E6004FB23A /* LaunchScreen.storyboard in Resources */,
 				394C8F6C28F9A2E6004FB23A /* Assets.xcassets in Resources */,
+				394C8FFF28FEF17B004FB23A /* AddCity.storyboard in Resources */,
 				394C8FF528FEAC2E004FB23A /* CityTableViewCell.xib in Resources */,
 				394C8F6728F9A2E5004FB23A /* Cities.storyboard in Resources */,
 			);
@@ -397,6 +412,7 @@
 				394C8FF828FEE66F004FB23A /* UIView+Shadow.swift in Sources */,
 				394C8FFA28FEEE45004FB23A /* Double+TemperatureFormatter.swift in Sources */,
 				394C8F6028F9A2E5004FB23A /* AppDelegate.swift in Sources */,
+				394C8FFD28FEF169004FB23A /* AddCityViewController.swift in Sources */,
 				394C8F6A28F9A2E5004FB23A /* EPS_Weather.xcdatamodeld in Sources */,
 				394C8FEB28FDCF76004FB23A /* Images+Enum.swift in Sources */,
 				394C8FEE28FEA7CD004FB23A /* CityTableViewCell.swift in Sources */,

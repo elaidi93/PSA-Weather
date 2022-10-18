@@ -10,13 +10,11 @@ import CoreLocation
 
 class CitiesViewController: UIViewController {
 	
-	@IBOutlet private weak var img: UIImageView!
 	@IBOutlet private weak var tableview: UITableView! {
 		didSet {
 			tableview.dataSource = self
 			tableview.delegate = self
 			tableview.register(UINib(nibName: CityTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CityTableViewCell.reuseIdentifier)
-			tableview.contentInset.top = 20
 		}
 	}
 	
@@ -43,6 +41,12 @@ class CitiesViewController: UIViewController {
 			}
 		}
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let destination = segue.destination as? AddCityViewController {
+			destination.delegate = self
+		}
+	}
 }
 
 // MARK: - TableView Protocols
@@ -63,3 +67,10 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 }
 
+
+extension CitiesViewController: AddCityViewControllerDelegate {
+	func didAdd(weather: WeatherResponse) {
+		self.weathers.append(weather)
+		self.tableview.reloadData()
+	}
+}
