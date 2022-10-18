@@ -35,6 +35,7 @@ class AddCityViewController: UIViewController {
     }
 }
 
+// MARK: - TableView Protocols
 extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,6 +74,7 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 }
 
+// MARK: - SearchBar Protocols
 extension AddCityViewController: MKLocalSearchCompleterDelegate, UISearchBarDelegate {
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		searchCompleter.queryFragment = searchText

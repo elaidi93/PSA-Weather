@@ -10,7 +10,6 @@ import CoreLocation
 
 class CitiesViewController: UIViewController {
 	
-	@IBOutlet private weak var img: UIImageView!
 	@IBOutlet private weak var tableview: UITableView! {
 		didSet {
 			tableview.dataSource = self
@@ -67,6 +66,7 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 }
+
 
 extension CitiesViewController: AddCityViewControllerDelegate {
 	func didAdd(weather: WeatherResponse) {
