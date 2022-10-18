@@ -11,7 +11,7 @@ class WeatherViewModel {
 	
 	func getWeather(params: Coordinate, completionHandler: @escaping (Result<WeatherResponse, Error>) -> ()) {
 		
-		guard let url = URL(string: "\(Constants.api_url)?lat=\(params.lat)&lon=\(params.lon)&appid=\(Constants.api_key)")
+		guard let url = URL(string: "\(Constants.api_url)?lat=\(params.lat)&lon=\(params.lon)&appid=\(Constants.api_key)&units=metric")
 		else { return }
 		
 		let task = URLSession.shared.dataTask(with: url) { data, _, error in
