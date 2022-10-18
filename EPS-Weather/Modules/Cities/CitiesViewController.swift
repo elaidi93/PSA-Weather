@@ -16,7 +16,6 @@ class CitiesViewController: UIViewController {
 			tableview.dataSource = self
 			tableview.delegate = self
 			tableview.register(UINib(nibName: CityTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CityTableViewCell.reuseIdentifier)
-			tableview.contentInset.top = 20
 		}
 	}
 	
