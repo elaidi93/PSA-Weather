@@ -15,4 +15,7 @@ class Constants {
 	
 	// MARK: - Cities
 	static let cities_title = "Villes"
+	
+	// MARK: - Details
+	static let details_title = "Méteo"
 }

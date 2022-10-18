@@ -64,6 +64,12 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		
+		guard let detailsVC = UIStoryboard(name: "WeatherDetails", bundle: nil).instantiateInitialViewController() as? WeatherDetailsViewController
+		else { return }
+		
+		detailsVC.weather = weathers[indexPath.row]
+		self.navigationController?.pushViewController(detailsVC, animated: true)
 	}
 }
 
