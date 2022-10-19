@@ -29,8 +29,8 @@ class WeatherViewModel {
 			} else if let data {
 				do {
 					let weather = try JSONDecoder().decode(WeatherResponse.self, from: data)
-					self.dbWeatherManager?.insert(weather: weather)
 					DispatchQueue.main.async {
+						self.dbWeatherManager?.insert(weather: weather)
 						completionHandler(.success(weather))
 					}
 				} catch(let error) {
