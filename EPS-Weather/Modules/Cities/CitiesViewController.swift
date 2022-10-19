@@ -18,7 +18,8 @@ class CitiesViewController: UIViewController {
 		}
 	}
 	
-	private var weathers: [WeatherResponse] = []
+	private var weathers = [WeatherResponse]()
+	private let viewModel = WeatherViewModel(dbWeatherManager: DB_Weather())
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,23 +29,17 @@ class CitiesViewController: UIViewController {
 	}
 	
 	private func fetchWeathers() {
-		let viewModel = WeatherViewModel()
-		DispatchQueue.main.async {
-			viewModel.getWeather(params: CLLocationCoordinate2DMake(48.11220330007356, -1.6822433953343767)) { result in
-				switch result {
-				case .success(let weather):
-					self.weathers.append(weather)
-					self.tableview.reloadData()
-				case .failure(let error):
-					print(error)
-				}
-			}
-		}
+
+		do {
+			weathers = try viewModel.getWeathers()
+			self.tableview.reloadData()
+		} catch(let error) { print(error) }
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let destination = segue.destination as? AddCityViewController {
 			destination.delegate = self
+			destination.viewModel = viewModel
 		}
 	}
 }
@@ -57,8 +52,9 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: CityTableViewCell.reuseIdentifier, for: indexPath) as? CityTableViewCell
+				
 		else { return UITableViewCell() }
-		cell.configure(with: self.weathers[indexPath.row])
+		cell.configure(with:self.weathers[indexPath.row])
 		return cell
 	}
 	

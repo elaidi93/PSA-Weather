@@ -25,7 +25,7 @@ class AddCityViewController: UIViewController {
 	var searchCompleter = MKLocalSearchCompleter()
 	var searchResults = [MKLocalSearchCompletion]()
 	
-	let viewModel = WeatherViewModel()
+	var viewModel: WeatherViewModel?
 	var delegate: AddCityViewControllerDelegate?
 
     override func viewDidLoad() {
@@ -61,7 +61,7 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 			guard let coordinate = response?.mapItems[0].placemark.coordinate
 			else { return }
 			
-			self.viewModel.getWeather(params: coordinate) { result in
+			self.viewModel?.getWeather(params: coordinate) { result in
 				switch result {
 				case .success(let weather):
 					self.delegate?.didAdd(weather: weather)
