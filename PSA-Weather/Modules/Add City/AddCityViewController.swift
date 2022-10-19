@@ -31,7 +31,7 @@ class AddCityViewController: UIViewController {
 		let search = UISearchController(searchResultsController: nil)
 		search.searchResultsUpdater = self
 		search.obscuresBackgroundDuringPresentation = false
-		search.searchBar.placeholder = Constants.searchBar_placeholder
+		search.searchBar.placeholder = Constants.searchBar_placeholder.rawValue
 		
 		return search
 	}()
@@ -40,7 +40,7 @@ class AddCityViewController: UIViewController {
         super.viewDidLoad()
 
 		searchCompleter.delegate = self
-		self.title = Constants.addCity_title
+		self.title = Constants.addCity_title.rawValue
 		self.navigationItem.searchController = self.searchControl
 		self.navigationItem.hidesSearchBarWhenScrolling = false
     }

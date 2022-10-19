@@ -20,7 +20,7 @@ class WeatherDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		self.title = Constants.details_title
+		self.title = Constants.details_title.rawValue
         refreshUI()
     }
 	

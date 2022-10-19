@@ -23,7 +23,7 @@ class CitiesViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.title = Constants.cities_title
+		self.title = Constants.cities_title.rawValue
 		self.navigationController?.navigationBar.prefersLargeTitles = true
 		fetchWeathers()
 	}
