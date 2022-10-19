@@ -67,6 +67,14 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 		detailsVC.weather = weathers[indexPath.row]
 		self.navigationController?.pushViewController(detailsVC, animated: true)
 	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
+			viewModel.delete(weather: weathers[indexPath.row])
+			weathers.remove(at: indexPath.row)
+			tableView.deleteRows(at: [indexPath], with: .fade)
+		}
+	}
 }
 
 
