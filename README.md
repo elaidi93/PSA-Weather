@@ -16,7 +16,8 @@ iOS developer technical Interview for PSA
 ## Interface
 
 <p align="center">
-  <a href="https://github.com/elaidi93/PSA-Weather/blob/develop/img/screenshot_villes.jpeg"><img alt="ios" src="https://github.com/elaidi93/PSA-Weather/blob/develop/img/screenshot_list.jpeg"/></a>
+  <a href="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screenshot_villes.jpeg"><img alt="ios" src="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screenshot_villes.jpeg"/></a>
+    <a href="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screenshot_list.jpeg"><img alt="ios" src="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screenshot_list.jpeg"/></a>
 </p>
 
 ## Architecture 
