@@ -14,7 +14,6 @@ protocol AddCityViewControllerDelegate {
 
 class AddCityViewController: UIViewController {
 	
-	@IBOutlet private weak var searchBar: UISearchBar!
 	@IBOutlet private weak var tableView: UITableView! {
 		didSet {
 			tableView.dataSource = self
@@ -27,11 +26,23 @@ class AddCityViewController: UIViewController {
 	
 	var viewModel: WeatherViewModel?
 	var delegate: AddCityViewControllerDelegate?
+	
+	private lazy var searchControl: UISearchController = {
+		let search = UISearchController(searchResultsController: nil)
+		search.searchResultsUpdater = self
+		search.obscuresBackgroundDuringPresentation = false
+		search.searchBar.placeholder = Constants.searchBar_placeholder
+		
+		return search
+	}()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		searchCompleter.delegate = self
+		self.title = Constants.addCity_title
+		self.navigationItem.searchController = self.searchControl
+		self.navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
 
@@ -46,9 +57,7 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 		let searchResult = searchResults[indexPath.row]
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 		
-		//Set the content of the cell to our searchResult data
 		cell.textLabel?.text = searchResult.title
-		cell.detailTextLabel?.text = searchResult.subtitle
 		
 		return cell
 	}
@@ -65,7 +74,7 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 				switch result {
 				case .success(let weather):
 					self.delegate?.didAdd(weather: weather)
-					self.dismiss(animated: true)
+					self.navigationController?.popViewController(animated: true)
 				case .failure(let error):
 					print(error)
 				}
@@ -75,13 +84,16 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 // MARK: - SearchBar Protocols
-extension AddCityViewController: MKLocalSearchCompleterDelegate, UISearchBarDelegate {
-	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		searchCompleter.queryFragment = searchText
-	}
+extension AddCityViewController: MKLocalSearchCompleterDelegate {
 	
 	func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
 		searchResults = completer.results
 		tableView.reloadData()
+	}
+}
+
+extension AddCityViewController: UISearchResultsUpdating {
+	func updateSearchResults(for searchController: UISearchController) {
+		searchCompleter.queryFragment = searchController.searchBar.text ?? ""
 	}
 }

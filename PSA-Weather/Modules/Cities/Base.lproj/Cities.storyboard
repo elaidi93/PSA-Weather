@@ -12,7 +12,7 @@
         <!--Cities View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CitiesViewController" customModule="EPS_Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CitiesViewController" customModule="PSA_Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="fLg-i6-s1O">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="SAs-aL-9pP">
                             <connections>
-                                <segue destination="00P-ep-VT1" kind="presentation" id="yeR-U8-7qZ"/>
+                                <segue destination="00P-ep-VT1" kind="show" id="yeR-U8-7qZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,7 +49,9 @@
         <!--AddCity-->
         <scene sceneID="YWS-wR-PTN">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddCity" id="00P-ep-VT1" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AddCity" id="00P-ep-VT1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dar-AV-ZXG"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kK4-ju-NJ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1592" y="-2"/>

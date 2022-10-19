@@ -18,4 +18,8 @@ class Constants {
 	
 	// MARK: - Details
 	static let details_title = "Méteo"
+	
+	// MARK: - Add city
+	static let addCity_title = "Ajouter une ville"
+	static let searchBar_placeholder = "Rechercher"
 }

@@ -77,7 +77,6 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 }
 
-
 extension CitiesViewController: AddCityViewControllerDelegate {
 	func didAdd(weather: WeatherResponse) {
 		self.weathers.append(weather)
