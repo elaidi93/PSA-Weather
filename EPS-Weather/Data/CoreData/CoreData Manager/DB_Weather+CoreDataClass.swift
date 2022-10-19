@@ -6,13 +6,13 @@
 //
 //
 
-import Foundation
 import CoreData
+import UIKit
 
 @objc(DB_Weather)
 public class DB_Weather: NSManagedObject {
 	
-	private let context = AppDelegate.shared.persistentContainer.viewContext
+	private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	
 	// Fetch weathers
 	func fetchWeathers() -> [DB_Weather]? {
@@ -39,6 +39,6 @@ public class DB_Weather: NSManagedObject {
 			dbWeather.main = try JSONEncoder().encode(weather.main)
 			
 			try? context.save()
-		} catch {}
+		} catch(let error) { print(error) }
 	}
 }

@@ -33,7 +33,7 @@ class CitiesViewController: UIViewController {
 		do {
 			weathers = try viewModel.getWeathers()
 			self.tableview.reloadData()
-		} catch {}
+		} catch(let error) { print(error) }
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
