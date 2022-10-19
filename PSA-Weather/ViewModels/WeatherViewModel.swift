@@ -18,7 +18,7 @@ class WeatherViewModel {
 	
 	func getWeather(params: CLLocationCoordinate2D, completionHandler: @escaping (Result<WeatherResponse, Error>) -> ()) {
 		
-		guard let url = URL(string: "\(Constants.api_url)?lat=\(params.latitude)&lon=\(params.longitude)&appid=\(Constants.api_key)&units=metric")
+		guard let url = URL(string: "\(Constants.api_url.rawValue)?lat=\(params.latitude)&lon=\(params.longitude)&appid=\(Constants.api_key.rawValue)&units=metric")
 		else { return }
 		
 		let task = URLSession.shared.dataTask(with: url) { data, _, error in
@@ -49,10 +49,10 @@ class WeatherViewModel {
 		return try dbWeathers.map {
 			WeatherResponse(id: Int($0.id),
 							name: $0.name,
-							weather: try JSONDecoder().decode([Weather].self, from: $0.weather),
-							main: try JSONDecoder().decode(Main.self, from: $0.main),
-							coord: try JSONDecoder().decode(WeatherCoordinate.self, from: $0.coord),
-							wind: try JSONDecoder().decode(Wind.self, from: $0.wind))
+							weather: try JSONDecoder().decode([WeatherResponse.Weather].self, from: $0.weather),
+							main: try JSONDecoder().decode(WeatherResponse.Main.self, from: $0.main),
+							coord: try JSONDecoder().decode(WeatherResponse.WeatherCoordinate.self, from: $0.coord),
+							wind: try JSONDecoder().decode(WeatherResponse.Wind.self, from: $0.wind))
 		}
 	}
 	

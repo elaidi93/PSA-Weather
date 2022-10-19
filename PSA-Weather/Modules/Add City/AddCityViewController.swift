@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 
 protocol AddCityViewControllerDelegate {
-	func didAdd(weather: WeatherResponse)
+	func refreshList()
 }
 
 class AddCityViewController: UIViewController {
@@ -73,7 +73,7 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 			self.viewModel?.getWeather(params: coordinate) { result in
 				switch result {
 				case .success(let weather):
-					self.delegate?.didAdd(weather: weather)
+					self.delegate?.refreshList()
 					self.navigationController?.popViewController(animated: true)
 				case .failure(let error):
 					print(error)
