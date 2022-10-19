@@ -47,12 +47,16 @@ class WeatherViewModel {
 		else { return [] }
 		
 		return try dbWeathers.map {
-			WeatherResponse(name: $0.name,
+			WeatherResponse(id: Int($0.id),
+							name: $0.name,
 							weather: try JSONDecoder().decode([Weather].self, from: $0.weather),
 							main: try JSONDecoder().decode(Main.self, from: $0.main),
 							coord: try JSONDecoder().decode(WeatherCoordinate.self, from: $0.coord),
 							wind: try JSONDecoder().decode(Wind.self, from: $0.wind))
 		}
-		
+	}
+	
+	func delete(weather: WeatherResponse) {
+		dbWeatherManager?.delete(with: weather.id)
 	}
 }

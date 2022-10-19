@@ -16,6 +16,7 @@ extension DB_Weather {
         return NSFetchRequest<DB_Weather>(entityName: "DB_Weather")
     }
 
+	@NSManaged public var id: Int64
     @NSManaged public var name: String
     @NSManaged public var coord: Data
     @NSManaged public var wind: Data

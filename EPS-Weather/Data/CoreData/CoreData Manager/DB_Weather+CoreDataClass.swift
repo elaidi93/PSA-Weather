@@ -29,6 +29,15 @@ public class DB_Weather: NSManagedObject {
 		try? context.save()
 	}
 	
+	func delete(with id: Int) {
+		guard let weather = self.fetchWeathers()?.first(where: { $0.id == id })
+		else { return }
+		
+		context.delete(weather)
+		
+		try? context.save()
+	}
+	
 	func insert(weather: WeatherResponse) {
 		let dbWeather = DB_Weather(context: context)
 		dbWeather.name = weather.name
@@ -38,7 +47,7 @@ public class DB_Weather: NSManagedObject {
 			dbWeather.coord = try JSONEncoder().encode(weather.coord)
 			dbWeather.main = try JSONEncoder().encode(weather.main)
 			
-			try? context.save()
+			try context.save()
 		} catch(let error) { print(error) }
 	}
 }
