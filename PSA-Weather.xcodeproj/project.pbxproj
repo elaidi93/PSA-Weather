@@ -31,6 +31,7 @@
 		395F7BE129002A6200E53BA8 /* PSA_Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 395F7BDF29002A6200E53BA8 /* PSA_Weather.xcdatamodeld */; };
 		3981138929004709006EB89C /* APIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395F7C032900452200E53BA8 /* APIFramework.framework */; };
 		3981138A29004709006EB89C /* APIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 395F7C032900452200E53BA8 /* APIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3981139529004E6D006EB89C /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981139429004E6D006EB89C /* WeatherViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		395F7C062900454800E53BA8 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		395F7C072900454800E53BA8 /* APIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIFramework.h; sourceTree = "<group>"; };
 		395F7C082900454800E53BA8 /* APIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = APIFramework.xcodeproj; sourceTree = "<group>"; };
+		3981139429004E6D006EB89C /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		394C8F7828F9A2E6004FB23A /* PSA-WeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				3981139129004E4A006EB89C /* TestViewModel */,
 				394C8F7928F9A2E6004FB23A /* PSA_WeatherTests.swift */,
 			);
 			path = "PSA-WeatherTests";
@@ -393,6 +396,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3981139129004E4A006EB89C /* TestViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3981139429004E6D006EB89C /* WeatherViewModelTests.swift */,
+			);
+			path = TestViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -576,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				394C8F7A28F9A2E6004FB23A /* PSA_WeatherTests.swift in Sources */,
+				3981139529004E6D006EB89C /* WeatherViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
