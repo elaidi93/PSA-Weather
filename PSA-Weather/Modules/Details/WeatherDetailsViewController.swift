@@ -25,7 +25,7 @@ class WeatherDetailsViewController: UIViewController {
     }
 	
 	private func refreshUI() {
-		icon.image = Images(rawValue: weather?.weather.first?.icon ?? Images.img01d.rawValue)?.image
+		icon.image = UIImage(named: weather?.weather.first?.icon ?? "01d")
 		city.text = weather?.name
 		temperator.text = weather?.main.temp.formattedTemperature
 		humidity.text = weather?.main.humidity.formattedHumidity
