@@ -1,7 +1,7 @@
 <h1 align="center">PSA-Weather</h1>
 iOS developer technical Interview for PSA
 <p align="center">
-  <a href="https://upload.wikimedia.org/wikipedia/commons/7/78/IOS_11_logo.png"><img alt="ios" src="https://149493502.v2.pressablecdn.com/wp-content/uploads/2019/04/ios-13-logo.jpg"/></a>
+  <a href="https://upload.wikimedia.org/wikipedia/commons/7/78/IOS_11_logo.png"><img alt="ios" src="https://upload.wikimedia.org/wikipedia/commons/7/78/IOS_11_logo.png"/></a>
 </p>
 
 ## Implementation
@@ -16,7 +16,7 @@ iOS developer technical Interview for PSA
 ## Interface
 
 <p align="center">
-  <a href="https://github.com/elaidi93/Ariadnext-technical-test/blob/develop/img/screenshot_villes.jpeg"><img alt="ios" src="https://github.com/elaidi93/Ariadnext-technical-test/blob/develop/img/screenshot_list.jpeg"/></a>
+  <a href="https://github.com/elaidi93/PSA-Weather/blob/develop/img/screenshot_villes.jpeg"><img alt="ios" src="https://github.com/elaidi93/PSA-Weather/blob/develop/img/screenshot_list.jpeg"/></a>
 </p>
 
 ## Architecture 
