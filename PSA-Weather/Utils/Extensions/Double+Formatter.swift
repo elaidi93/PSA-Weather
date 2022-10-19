@@ -36,6 +36,7 @@ extension Double {
 	private var measurementFormatter: MeasurementFormatter {
 		let formatter = MeasurementFormatter()
 		formatter.unitStyle = .medium
+		formatter.locale = Locale(identifier: "fr_FR")
 		formatter.numberFormatter.maximumFractionDigits = 0
 		return formatter
 	}
