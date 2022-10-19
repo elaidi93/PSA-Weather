@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import APIFramework
 
 class WeatherViewModel {
 	
@@ -18,15 +19,9 @@ class WeatherViewModel {
 	
 	func getWeather(params: CLLocationCoordinate2D, completionHandler: @escaping (Result<WeatherResponse, Error>) -> ()) {
 		
-		guard let url = URL(string: "\(Constants.api_url.rawValue)?lat=\(params.latitude)&lon=\(params.longitude)&appid=\(Constants.api_key.rawValue)&units=metric")
-		else { return }
-		
-		let task = URLSession.shared.dataTask(with: url) { data, _, error in
-			
-			if let error {
-				completionHandler(.failure(error))
-				
-			} else if let data {
+		APIRequest.shared.request(url: generateUrl(with: params)) { result in
+			switch result {
+			case .success(let data):
 				do {
 					let weather = try JSONDecoder().decode(WeatherResponse.self, from: data)
 					DispatchQueue.main.async {
@@ -36,9 +31,10 @@ class WeatherViewModel {
 				} catch(let error) {
 					completionHandler(.failure(error))
 				}
+			case .failure(let error):
+				completionHandler(.failure(error))
 			}
 		}
-		task.resume()
 	}
 	
 	func getWeathers() throws -> [WeatherResponse] {
@@ -58,5 +54,9 @@ class WeatherViewModel {
 	
 	func delete(weather: WeatherResponse) {
 		dbWeatherManager?.delete(with: weather.id)
+	}
+	
+	private func generateUrl(with coord: CLLocationCoordinate2D) -> URL? {
+		return URL(string: "\(Constants.api_url.rawValue)?lat=\(coord.latitude)&lon=\(coord.longitude)&appid=\(Constants.api_key.rawValue)&units=metric")
 	}
 }

@@ -72,7 +72,7 @@ extension AddCityViewController: UITableViewDataSource, UITableViewDelegate {
 			
 			self.viewModel?.getWeather(params: coordinate) { result in
 				switch result {
-				case .success(let weather):
+				case .success(_):
 					self.delegate?.refreshList()
 					self.navigationController?.popViewController(animated: true)
 				case .failure(let error):

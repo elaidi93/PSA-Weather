@@ -29,6 +29,8 @@
 		394C900428FF0A60004FB23A /* WeatherDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394C900328FF0A60004FB23A /* WeatherDetails.storyboard */; };
 		394C901028FF1DC6004FB23A /* DB_Weather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394C900E28FF1DC6004FB23A /* DB_Weather+CoreDataClass.swift */; };
 		395F7BE129002A6200E53BA8 /* PSA_Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 395F7BDF29002A6200E53BA8 /* PSA_Weather.xcdatamodeld */; };
+		3981138929004709006EB89C /* APIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395F7C032900452200E53BA8 /* APIFramework.framework */; };
+		3981138A29004709006EB89C /* APIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 395F7C032900452200E53BA8 /* APIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,35 @@
 			remoteGlobalIDString = 394C8F5B28F9A2E5004FB23A;
 			remoteInfo = "EPS-Weather";
 		};
+		395F7C022900452200E53BA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 395F7BFE2900452200E53BA8 /* APIFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 395F7BED2900429500E53BA8;
+			remoteInfo = APIFramework;
+		};
+		395F7C0C2900454800E53BA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 395F7C082900454800E53BA8 /* APIFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 395F7BED2900429500E53BA8;
+			remoteInfo = APIFramework;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3981138B29004709006EB89C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3981138A29004709006EB89C /* APIFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		394C8F5C28F9A2E5004FB23A /* PSA-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PSA-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +105,12 @@
 		394C900328FF0A60004FB23A /* WeatherDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherDetails.storyboard; sourceTree = "<group>"; };
 		394C900E28FF1DC6004FB23A /* DB_Weather+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DB_Weather+CoreDataClass.swift"; sourceTree = "<group>"; };
 		395F7BE029002A6200E53BA8 /* PSA_Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSA_Weather.xcdatamodel; sourceTree = "<group>"; };
+		395F7BFC2900452200E53BA8 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		395F7BFD2900452200E53BA8 /* APIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIFramework.h; sourceTree = "<group>"; };
+		395F7BFE2900452200E53BA8 /* APIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = APIFramework.xcodeproj; sourceTree = "<group>"; };
+		395F7C062900454800E53BA8 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		395F7C072900454800E53BA8 /* APIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIFramework.h; sourceTree = "<group>"; };
+		395F7C082900454800E53BA8 /* APIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = APIFramework.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3981138929004709006EB89C /* APIFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +146,7 @@
 				394C8F7828F9A2E6004FB23A /* PSA-WeatherTests */,
 				394C8F8228F9A2E6004FB23A /* PSA-WeatherUITests */,
 				394C8F5D28F9A2E5004FB23A /* Products */,
+				395F7BF92900452200E53BA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,6 +332,67 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		395F7BF92900452200E53BA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				395F7C042900454800E53BA8 /* APIFramework */,
+				395F7BFA2900452200E53BA8 /* APIFramework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		395F7BFA2900452200E53BA8 /* APIFramework */ = {
+			isa = PBXGroup;
+			children = (
+				395F7BFB2900452200E53BA8 /* APIFramework */,
+				395F7BFE2900452200E53BA8 /* APIFramework.xcodeproj */,
+			);
+			path = APIFramework;
+			sourceTree = "<group>";
+		};
+		395F7BFB2900452200E53BA8 /* APIFramework */ = {
+			isa = PBXGroup;
+			children = (
+				395F7BFC2900452200E53BA8 /* APIRequest.swift */,
+				395F7BFD2900452200E53BA8 /* APIFramework.h */,
+			);
+			path = APIFramework;
+			sourceTree = "<group>";
+		};
+		395F7BFF2900452200E53BA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				395F7C032900452200E53BA8 /* APIFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		395F7C042900454800E53BA8 /* APIFramework */ = {
+			isa = PBXGroup;
+			children = (
+				395F7C052900454800E53BA8 /* APIFramework */,
+				395F7C082900454800E53BA8 /* APIFramework.xcodeproj */,
+			);
+			path = APIFramework;
+			sourceTree = "<group>";
+		};
+		395F7C052900454800E53BA8 /* APIFramework */ = {
+			isa = PBXGroup;
+			children = (
+				395F7C062900454800E53BA8 /* APIRequest.swift */,
+				395F7C072900454800E53BA8 /* APIFramework.h */,
+			);
+			path = APIFramework;
+			sourceTree = "<group>";
+		};
+		395F7C092900454800E53BA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				395F7C0D2900454800E53BA8 /* APIFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +403,7 @@
 				394C8F5828F9A2E5004FB23A /* Sources */,
 				394C8F5928F9A2E5004FB23A /* Frameworks */,
 				394C8F5A28F9A2E5004FB23A /* Resources */,
+				3981138B29004709006EB89C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,6 +484,16 @@
 			mainGroup = 394C8F5328F9A2E5004FB23A;
 			productRefGroup = 394C8F5D28F9A2E5004FB23A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 395F7BFF2900452200E53BA8 /* Products */;
+					ProjectRef = 395F7BFE2900452200E53BA8 /* APIFramework.xcodeproj */;
+				},
+				{
+					ProductGroup = 395F7C092900454800E53BA8 /* Products */;
+					ProjectRef = 395F7C082900454800E53BA8 /* APIFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				394C8F5B28F9A2E5004FB23A /* PSA-Weather */,
@@ -392,6 +502,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		395F7C032900452200E53BA8 /* APIFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = APIFramework.framework;
+			remoteRef = 395F7C022900452200E53BA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		395F7C0D2900454800E53BA8 /* APIFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = APIFramework.framework;
+			remoteRef = 395F7C0C2900454800E53BA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		394C8F5A28F9A2E5004FB23A /* Resources */ = {
